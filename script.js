@@ -18,20 +18,9 @@ function getComputerChoice() {
 
 function getUserChoice() {
     
-    let choice= prompt("What move would you like to play? Choose between rock, paper and scissors");
+    let choice = prompt("What move would you like to play? Choose between rock, paper and scissors");
 
-    if (choice == null || choice == "" ) {
-        return "to cancel"
-    }
-
-    else if (choice.toUpperCase() == "ROCK" || choice.toUpperCase() == "Scissors" || choice.toUpperCase() == "Paper") {
-        return choice
-    }
-
-    else {
-        return "an invalid move";
-    }
-
+    return choice;
 }
 
 function playRound(playerChoice, computerSelection) {
@@ -65,17 +54,15 @@ function playRound(playerChoice, computerSelection) {
     else if (playerSelection === "SCISSORS" && computerSelection === "Paper") {
         winner = "You won";
     }
-    else if(playerChoice == "to cancel") {
-        winner = "The player didn't choose a move, the computer wins";
-    }
+    
     else {
-        winner = "The player used an invalid move, the computer won";
+        winner = "The player didn't choose any valid move, the computer won";
     }
     
     console.log("The computer chose " + computerSelection + ".")
 
-    if (winner == "The player used an invalid move, the computer won") {
-        console.log(winner)
+    if (winner == "The player didn't choose any valid move, the computer won") {
+        console.log("You didn't make a valid move")
     }
 
     else {
@@ -88,7 +75,7 @@ function playRound(playerChoice, computerSelection) {
         return "player";
     }
 
-    if (winner === "The computer won"|| winner === "The player used an invalid move, the computer won" || winner === "The player didn't choose a move, the computer wins") {
+    if (winner === "The computer won"|| winner === "The player didn't choose any valid move, the computer won") {
         return "computer";
     }
     
@@ -100,7 +87,7 @@ function playRound(playerChoice, computerSelection) {
 
 
 function playGame() {
-    console.clear()
+    
     let playerWins = 0;
     let computerWins = 0;
     for(let rounds = 1; rounds <= 5; rounds++) {
@@ -108,23 +95,28 @@ function playGame() {
         let result = playRound(getUserChoice(),getComputerChoice());
 
         console.log(result)
-        if (result == "computer") {
-            computerWins += 1;
+        
+        switch (result) {
+            case "computer":
+                computerWins += 1;
+                break;
+            case "player":
+                playerWins += 1;
+                break;
+            case "tie":
+                // nothing happens
+                break;
         }
-
-        if (result == "player") {
-            playerWins += 1;
+        
+        switch (rounds) {
+            case 1:
+                console.log("So far, " + rounds + " round has been played");
+                break;
+            default:
+                console.log("So far, " + rounds + " rounds have been played");
         }
-
-        if (result == "tie") {
-            //notthing happens
-        }
-        if(rounds == 1) {
-            console.log("So far, " + rounds + " round has been played")
-        }
-        else {
-            console.log("So far, " + rounds + " rounds have been played")
-        }
+    
+        
         console.log("The player has won " + playerWins + " times, the computer has won " + computerWins + " times.")
 
         if (playerWins == 3) {
@@ -136,8 +128,15 @@ function playGame() {
             break;
         }
         
-       
+        if (rounds == 5 && computerWins > playerWins) {
+            console.log("The computer has won more rounds and therefore wins the game")
+        }
+        
+        else if (rounds == 5 && computerWins < playerWins) {
+            console.log("The playeer has won more rounds and therefore wins the game")
+        }
     }
+
 }
 
 playGame()
