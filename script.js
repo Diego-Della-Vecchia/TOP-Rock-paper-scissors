@@ -55,14 +55,22 @@ function playRound(playerChoice, computerSelection) {
         winner = "You won";
     }
     
+    else if (playerSelection == ""){
+        winner = "The player didn't make any move, the computer won";
+    }
+
+    
     else {
-        winner = "The player didn't choose any valid move, the computer won";
+        winner = "The player made an invalid move, the computer won";
     }
     
     console.log("The computer chose " + computerSelection + ".")
 
-    if (winner == "The player didn't choose any valid move, the computer won") {
-        console.log("You didn't make a valid move")
+    if (winner == "The player didn't make any move, the computer won"){
+        console.log("The player didn't make any move")
+    }
+    else if (winner == "The player made an invalid move, the computer won") {
+        console.log("You made an invalid move")
     }
 
     else {
@@ -74,17 +82,17 @@ function playRound(playerChoice, computerSelection) {
     if (winner === "You won") {
         return "player";
     }
-
-    if (winner === "The computer won"|| winner === "The player didn't choose any valid move, the computer won") {
-        return "computer";
-    }
-    
-    if (winner == "It's a tie") {
+  
+    else if (winner == "It's a tie") {
         return "tie";
     }
 
+    else {
+        return "computer";
+
 }
 
+}
 
 function playGame() {
     
