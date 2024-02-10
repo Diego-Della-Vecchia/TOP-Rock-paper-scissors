@@ -101,8 +101,6 @@ function playGame() {
     for(let rounds = 1; rounds <= 5; rounds++) {
 
         let result = playRound(getUserChoice(),getComputerChoice());
-
-        console.log(result)
         
         switch (result) {
             case "computer":
