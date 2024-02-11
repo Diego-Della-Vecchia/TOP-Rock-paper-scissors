@@ -18,44 +18,52 @@ function getComputerChoice() {
 
 function getUserChoice() {
     
-    let choice = prompt("What move would you like to play? Choose between rock, paper and scissors");
+    let choice = prompt("What move would you like to play? Choose between rock, paper and scissors. If you don'tt make a move, you will make a random move, if you cancel, you will loose.");
+
+    if (choice == "") {
+        choice = getComputerChoice();
+    }
+    else if (choice == null){
+        choice="null"
+    }
 
     return choice;
+    
 }
 
 function playRound(playerChoice, computerSelection) {
+    
     let winner;
-    playerSelection = playerChoice.toUpperCase();
 
-    if (playerSelection === computerSelection.toUpperCase()) {
+     if (playerChoice.toUpperCase() === computerSelection.toUpperCase()) {
         winner = "It's a tie";
     }
 
-    else if (playerSelection === "ROCK" && computerSelection === "Paper") {
+    else if (playerChoice.toUpperCase() === "ROCK" && computerSelection === "Paper") {
         winner = "The computer won";
     }
     
-    else if (playerSelection === "ROCK" && computerSelection === "Scissors") {
+    else if (playerChoice.toUpperCase() === "ROCK" && computerSelection === "Scissors") {
         winner = "You won";
     }
     
-    else if (playerSelection === "PAPER" && computerSelection === "Rock") {
+    else if (playerChoice.toUpperCase() === "PAPER" && computerSelection === "Rock") {
         winner = "You won";
     }
 
-    else if (playerSelection === "PAPER" && computerSelection === "Scissors") {
+    else if (playerChoice.toUpperCase() === "PAPER" && computerSelection === "Scissors") {
         winner = "The computer won";
     }
 
-    else if (playerSelection === "SCISSORS" && computerSelection === "Rock") {
+    else if (playerChoice.toUpperCase() === "SCISSORS" && computerSelection === "Rock") {
         winner = "The computer won";
     }
 
-    else if (playerSelection === "SCISSORS" && computerSelection === "Paper") {
+    else if (playerChoice.toUpperCase()=== "SCISSORS" && computerSelection === "Paper") {
         winner = "You won";
     }
     
-    else if (playerSelection == ""){
+    else if (playerChoice.toUpperCase() == ""){
         winner = "The player didn't make any move, the computer won";
     }
 
@@ -63,7 +71,9 @@ function playRound(playerChoice, computerSelection) {
     else {
         winner = "The player made an invalid move, the computer won";
     }
-    
+
+   
+
     console.log("The computer chose " + computerSelection + ".")
 
     if (winner == "The player didn't make any move, the computer won"){
