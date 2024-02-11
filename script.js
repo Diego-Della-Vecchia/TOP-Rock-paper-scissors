@@ -18,13 +18,13 @@ function getComputerChoice() {
 
 function getUserChoice() {
     
-    let choice = prompt("What move would you like to play? Choose between rock, paper and scissors. If you don'tt make a move, you will make a random move, if you cancel, you will loose.");
+    let choice = prompt("What move would you like to play? Choose between rock, paper and scissors. If you don'tt make a move, you will make a random move, if you cancel, you will skip thee round and loose.");
 
     if (choice == "") {
         choice = getComputerChoice();
     }
     else if (choice == null){
-        choice="null"
+        choice="null";
     }
 
     return choice;
@@ -34,7 +34,10 @@ function getUserChoice() {
 function playRound(playerChoice, computerSelection) {
     
     let winner;
-
+if (playerChoice = "null") {
+    return "cancel"
+}
+    else{    
      if (playerChoice.toUpperCase() === computerSelection.toUpperCase()) {
         winner = "It's a tie";
     }
@@ -62,24 +65,19 @@ function playRound(playerChoice, computerSelection) {
     else if (playerChoice.toUpperCase()=== "SCISSORS" && computerSelection === "Paper") {
         winner = "You won";
     }
-    
-    else if (playerChoice.toUpperCase() == ""){
-        winner = "The player didn't make any move, the computer won";
-    }
 
+    else if(playerChoice == "null") {
+
+    }
+    
     
     else {
         winner = "The player made an invalid move, the computer won";
     }
 
    
-
-    console.log("The computer chose " + computerSelection + ".")
-
-    if (winner == "The player didn't make any move, the computer won"){
-        console.log("The player didn't make any move")
-    }
-    else if (winner == "The player made an invalid move, the computer won") {
+    
+    if (winner == "The player made an invalid move, the computer won") {
         console.log("You made an invalid move")
     }
 
@@ -103,6 +101,7 @@ function playRound(playerChoice, computerSelection) {
 }
 
 }
+}
 
 function playGame() {
     
@@ -113,6 +112,9 @@ function playGame() {
         let result = playRound(getUserChoice(),getComputerChoice());
         
         switch (result) {
+            case "cancel":
+                computerWins += 1;
+                break;
             case "computer":
                 computerWins += 1;
                 break;
@@ -123,7 +125,12 @@ function playGame() {
                 // nothing happens
                 break;
         }
+
+        if (result == "cancel"){
+            
+        }
         
+        else {
         switch (rounds) {
             case 1:
                 console.log("So far, " + rounds + " round has been played");
@@ -134,7 +141,7 @@ function playGame() {
     
         
         console.log("The player has won " + playerWins + " times, the computer has won " + computerWins + " times.")
-
+        }
         if (playerWins == 3) {
             console.log("The player has won 3 rounds and has therefore won the game")
             break;
@@ -152,6 +159,7 @@ function playGame() {
             console.log("The playeer has won more rounds and therefore wins the game")
         }
     }
+
 
 }
 
