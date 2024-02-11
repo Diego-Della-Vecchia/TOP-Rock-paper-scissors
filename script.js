@@ -18,13 +18,10 @@ function getComputerChoice() {
 
 function getUserChoice() {
     
-    let choice = prompt("What move would you like to play? Choose between rock, paper and scissors. If you don'tt make a move, you will make a random move, if you cancel, you will skip thee round and loose.");
+    let choice = prompt("What move would you like to play?");
 
     if (choice == "") {
         choice = getComputerChoice();
-    }
-    else if (choice == null){
-        choice="null";
     }
 
     return choice;
@@ -34,7 +31,7 @@ function getUserChoice() {
 function playRound(playerChoice, computerSelection) {
     
     let winner;
-if (playerChoice = "null") {
+if (playerChoice == null) {
     return "cancel"
 }
     else{    

@@ -1,0 +1,10 @@
+ div {
+    width: 500px;
+    height: auto;
+    
+ }
+
+ body {
+    display: flex;
+    justify-content: center;
+ }
