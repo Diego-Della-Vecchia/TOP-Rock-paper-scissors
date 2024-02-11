@@ -63,9 +63,6 @@ if (playerChoice == null) {
         winner = "You won";
     }
 
-    else if(playerChoice == "null") {
-
-    }
     
     
     else {
@@ -161,4 +158,3 @@ function playGame() {
 }
 
 playGame()
-
