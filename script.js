@@ -80,6 +80,8 @@ if (playerChoice == null) {
 
     else {
         console.log("You chose " + playerChoice)
+
+    console.log("The computer chose " + computerSelection)
     }
    
     console.log(winner)
