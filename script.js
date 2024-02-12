@@ -155,7 +155,7 @@ function playGame() {
         }
         
         else if (rounds == 5 && computerWins < playerWins) {
-            console.log("The playeer has won more rounds and therefore wins the game")
+            console.log("The player has won more rounds and therefore wins the game")
         }
     }
 
