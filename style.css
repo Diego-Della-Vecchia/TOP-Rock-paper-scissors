@@ -31,6 +31,7 @@ body {
    height: 160px;
 }
 
+
 .playerChoice, .computerChoice {
    flex: 0;
    height: 300px;
@@ -58,6 +59,26 @@ body {
    border-radius: 2px;
    width: 100px;
    height: 40px;
+   
 }
 
+.container {
+   display: flex;
+   justify-content: center;
+}
 
+.rounds, .pWins, .cWins {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   font-size: 35px;
+   border: solid #b4b4b4 2px;
+   margin: 0px;
+   height: 100px;
+   padding: 20px;
+   width: 100px;
+}
+
+p {
+   margin: 0px;
+}
