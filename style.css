@@ -1,10 +1,29 @@
- div {
-    width: 500px;
-    height: auto;
-    
- }
+.title {
+   font-family: "Micro 5", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 80px;
+   color: #b4b4b4;
+   margin: 30px;
+}
 
- body {
-    display: flex;
-    justify-content: center;
- }
+body {
+   background-color: #121212;
+}
+
+.head {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+}
+
+.images {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+}
+
+.heroImages {
+   width: 100px;
+   height: auto;
+}
