@@ -10,17 +10,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
 </head>
 <body>
-   <div class="container">
-        <div class="head">
-            <h1 class="title">Play rock-paper-scissors against a computer</h1>
-            <div class="images">
-                <img src="assets/rock.png" alt="Pixel art of a fist" class="heroImages">
-                <img src="assets/paper.png" alt="Pixel art of a stretched out hand" class="heroImages">
-                <img src="assets/scissors.png" alt="Pixel art of a hand making a peace sign" class="heroImages">
+    <h1 class="title">Play rock-paper-scissors against a computer</h1>
+    <div class="images">
+        <img src="assets/rock.png" alt="Pixel art of a fist" class="heroImages" draggable="false">
+        <img src="assets/paper.png" alt="Pixel art of a stretched out hand" class="heroImages" draggable="false">
+        <img src="assets/scissors.png" alt="Pixel art of a hand making a peace sign" class="heroImages" draggable="false">
+    </div>
+    <div class="play">
+        <div class="images">
+            <div class="leftPlay">
+                <h2 class="title" id="subtitle">player</h2>
+                <img src="assets/question mark.png" alt="Question mark in place of the players choice because the player hasnt made a choice yet" class="playerChoice" draggable="false">
+            </div>
+            <div div class="seperator"></div>
+            <div class="playRight">
+                <h2 class="title" id="subtitle">Computer</h2>
+                <img src="assets/question mark.png" alt="Question mark in place of the computers choice because the round hasnt started" class="computerChoice" draggable="false">
             </div>
         </div>
-   </div>
-    
+        <h2 class="title" id="subtitle">Play a round</h2>
+        <div class="buttons">
+            <button class="rock title">Rock</button>
+            <button class="paper title">Paper</button>
+            <button class="scissors title">Scissors</button>
+            <audio src="assets/Rock paper scissors lose.mp3" id="lose"></audio>
+            <audio src="assets/Rock paper scissors win.wav" id="win"></audio>
+        </div>
+        <div class="Scoroeboard">
+            <h2 class="title" id="subtitle">Scoreboard</h2>
+        </div>
+    </div>
 </body>
 </html>
 
