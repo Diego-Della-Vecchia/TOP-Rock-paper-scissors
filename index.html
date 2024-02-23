@@ -30,11 +30,12 @@
         </div>
         <h2 class="title" id="subtitle">Play a round</h2>
         <div class="buttons">
-            <button class="rock title">Rock</button>
-            <button class="paper title">Paper</button>
-            <button class="scissors title">Scissors</button>
+            <button class="rock title" onclick="playRound('rock', computerChoice, playAudio)">Rock</button>
+            <button class="paper title" onclick="playRound('paper', computerChoice, playAudio)">Paper</button>
+            <button class="scissors title"onclick="playRound('scissors', computerChoice, playAudio)">Scissors</button>
             <audio src="assets/Rock paper scissors lose.mp3" id="lose"></audio>
             <audio src="assets/Rock paper scissors win.wav" id="win"></audio>
+            <audio src="assets/draw.wav" id="draw"></audio>
         </div>
         <div class="Scoroeboard">
             <h2 class="title" id="subtitle">Scoreboard</h2>
