@@ -29,7 +29,25 @@ function playRound(playerChoice, getComputerChoice, playAudio) {
     const playerImg = document.querySelector(".playerChoice");
     const computerImg = document.querySelector(".computerChoice");
 
+<<<<<<< HEAD
     let path;
+=======
+    else {
+        console.log("You chose " + playerChoice)
+
+    console.log("The computer chose " + computerSelection)
+    }
+   
+    console.log(winner)
+    
+    if (winner === "You won") {
+        return "player";
+    }
+  
+    else if (winner == "It's a tie") {
+        return "tie";
+    }
+>>>>>>> 25097ded5652b66dcc2ed2bf131072a8a1b7d3e6
 
     switch (playerChoice) {
         case "rock":
@@ -44,6 +62,18 @@ function playRound(playerChoice, getComputerChoice, playAudio) {
             path = "assets/scissors.ico";
             playerImg.src = "assets/scissors.png";
             break;
+<<<<<<< HEAD
+=======
+        }
+        
+        if (rounds == 5 && computerWins > playerWins) {
+            console.log("The computer has won more rounds and therefore wins the game")
+        }
+        
+        else if (rounds == 5 && computerWins < playerWins) {
+            console.log("The player has won more rounds and therefore wins the game")
+        }
+>>>>>>> 25097ded5652b66dcc2ed2bf131072a8a1b7d3e6
     }
 
     animateIcon(path)
