@@ -28,29 +28,29 @@
                 <img src="assets/question mark.png" alt="Question mark in place of the computers choice because the round hasnt started" class="computerChoice" draggable="false">
             </div>
         </div>
-        <h2 class="title" id="subtitle">Play a round</h2>
+        <h2 class="title playRound" id="subtitle">Play a round</h2>
         <div class="buttons">
             <button class="rock title" onclick="playRound('rock', computerChoice, playAudio)">Rock</button>
             <button class="paper title" onclick="playRound('paper', computerChoice, playAudio)">Paper</button>
             <button class="scissors title"onclick="playRound('scissors', computerChoice, playAudio)">Scissors</button>
-            <audio src="assets/Rock paper scissors lose.mp3" id="lose"></audio>
-            <audio src="assets/Rock paper scissors win.wav" id="win"></audio>
-            <audio src="assets/draw.wav" id="draw"></audio>
+            <audio src="assets/Rock paper scissors lose.mp3" id="lose" preload="auto"></audio>
+            <audio src="assets/Rock paper scissors win.wav" id="win" preload="auto"></audio>
+            <audio src="assets/draw.wav" id="draw" preload="auto"></audio>
         </div>
-        <div class="Scoroeboard">
+        <div class="Scoreboard">
             <h2 class="title" id="subtitle">Scoreboard</h2>
             <div class="container">
                 <div class="title rounds">
                     <p>Rounds</p>
-                    <p>0</p>
+                    <p class="currentRound">0</p>
                 </div>
-                <div class="title pWins">
+                <div class="title playerWins">
                     <p>Player</p>
-                    <p>0</p>
+                    <p class="currentPlayerWins">0</p>
                 </div>
-                <div class="title cWins">
+                <div class="title computerWins">
                     <p>Computer</p>
-                    <p>0</p>
+                    <p class="currentComputerWins">0</p>
                 </div>
             </div>
         </div>
