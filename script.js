@@ -29,17 +29,24 @@ function playRound(playerChoice, getComputerChoice, playAudio) {
     const playerImg = document.querySelector(".playerChoice");
     const computerImg = document.querySelector(".computerChoice");
 
+    let path;
+
     switch (playerChoice) {
         case "rock":
             playerImg.src = "assets/rock.png";
+            path = "assets/rock.ico"
             break;
         case "paper":
             playerImg.src = "assets/paper.png";
+            path = "assets/paper.ico";
             break;
         case "scissors":
+            path = "assets/scissors.ico";
             playerImg.src = "assets/scissors.png";
             break;
     }
+
+    animateIcon(path)
 
     let computerChoice = getComputerChoice();
 
@@ -100,30 +107,53 @@ function playRound(playerChoice, getComputerChoice, playAudio) {
 
     const buttonsParent = document.querySelector(".buttons");
 
-    const winner = document.createElement("h1");
-
     const playRound = document.querySelector(".playRound");
 
-    const play = document.querySelector(".play");
+    const newGame = document.createElement("button");
 
     if (playerScore === 5 || computerScore === 5) {
 
-        if (playerScore === 5) winner.innerText = "The player wins";
-        else winner.innerText = "The computer wins";
-
-        winner.classList.add("title")
-
-        winner.setAttribute("id", "subtitle");
-
-        buttonsParent.appendChild(winner);
+        if (playerScore === 5) playRound.innerText = "The player wins";
+        else playRound.innerText = "The computer wins";
 
         buttons.forEach(button => {
             buttonsParent.removeChild(button);
         });
 
-        play.removeChild(playRound);
+        rounds = 0;
 
-        console.log(playRound)
+        playerScore = 0;
 
+        computerScore = 0;
+
+        boardRounds.innerText = rounds;
+
+        boardPlayerScore.innerText = playerScore;
+
+        boardComputerScore.innerText = computerScore;
+
+        newGame.innerText = "New Game";
+
+        newGame.classList.add("newGame")
+
+        newGame.classList.add("title");
+
+        newGame.style.cssText = 'width: 160px;'
+
+        buttonsParent.appendChild(newGame);
+
+        newGame.addEventListener("click", () => {
+            buttonsParent.removeChild(newGame);
+            buttons.forEach(button => {
+                buttonsParent.appendChild(button);
+            });
+        });
     }
+}
+
+
+function animateIcon(path) {
+    const icon = document.querySelector(".icon");
+
+    icon.setAttribute("href", path);
 }

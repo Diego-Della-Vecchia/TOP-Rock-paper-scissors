@@ -50,7 +50,7 @@ body {
    gap: 75px;
 }
 
-.rock, .paper, .scissors {
+.rock, .paper, .scissors, .newGame {
    width: 100px;
    font-size: 45px;
    background-color: #b4b4b4;
@@ -61,6 +61,8 @@ body {
    height: 50px;
    
 }
+
+
 
 .container {
    display: flex;
